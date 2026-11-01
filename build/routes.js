@@ -40264,6 +40264,50 @@ export default {
     "url": "caixinglobal.com",
     "lang": "en"
   },
+  "calif": {
+    "routes": {
+      "/research": {
+        "path": "/research",
+        "name": "Research",
+        "url": "calif.io",
+        "maintainers": [
+          "shoeper"
+        ],
+        "example": "/calif/research",
+        "description": "Calif security research articles and write-ups.",
+        "categories": [
+          "new-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "calif.io/research"
+            ],
+            "target": "/research"
+          }
+        ],
+        "location": "index.ts",
+        "module": () => import('@/routes/calif/index.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "Calif",
+    "url": "calif.io",
+    "categories": [
+      "new-media"
+    ],
+    "description": "Security research from Calif.",
+    "lang": "en-us"
+  },
   "camchina": {
     "routes": {
       "/:id?": {
@@ -104876,6 +104920,29 @@ export default {
   },
   "reuters": {
     "routes": {
+      "/investigates": {
+        "path": "/investigates",
+        "categories": [
+          "traditional-media"
+        ],
+        "view": 0,
+        "example": "/reuters/investigates",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "Investigates",
+        "maintainers": [
+          "LyleLee"
+        ],
+        "location": "investigates.ts",
+        "module": () => import('@/routes/reuters/investigates.ts')
+      },
       "/my-news": {
         "path": "/my-news",
         "categories": [
@@ -104977,29 +105044,6 @@ export default {
         "description": "- `:category`:\n\n  | World | Business | Legal | Markets | Breakingviews | Technology | Graphics |\n  | ----- | -------- | ----- | ------- | ------------- | ---------- | -------- |\n  | world | business | legal | markets | breakingviews | technology | graphics |\n\n- `world/:topic`:\n\n  | All | Africa | Americas | Asia Pacific | China | Europe | India | Middle East | United Kingdom | United States | The Great Reboot | Reuters Next |\n  | --- | ------ | -------- | ------------ | ----- | ------ | ----- | ----------- | -------------- | ------------- | ---------------- | ------------ |\n  |     | africa | americas | asia-pacific | china | europe | india | middle-east | uk             | us            | the-great-reboot | reuters-next |\n\n- `business/:topic`:\n\n  | All | Aerospace & Defense | Autos & Transportation | Energy | Environment | Finance | Healthcare & Pharmaceuticals | Media & Telecom | Retail & Consumer | Sustainable Business | Charged | Future of Health | Future of Money | Take Five | Reuters Impact |\n  | --- | ------------------- | ---------------------- | ------ | ----------- | ------- | ---------------------------- | --------------- | ----------------- | -------------------- | ------- | ---------------- | --------------- | --------- | -------------- |\n  |     | aerospace-defense   | autos-transportation   | energy | environment | finance | healthcare-pharmaceuticals   | media-telecom   | retail-consumer   | sustainable-business | charged | future-of-health | future-of-money | take-five | reuters-impact |\n\n- `legal/:topic`:\n\n  | All | Government | Legal Industry | Litigation | Transactional |\n  | --- | ---------- | -------------- | ---------- | ------------- |\n  |     | government | legalindustry  | litigation | transactional |\n\n- `authors/:topic`:\n\n  | Default | Jonathan Landay | any other authors |\n  | ------- | --------------- | ----------------- |\n  | reuters | jonathan-landay | their name in URL |\n\nMore could be found in the URL of the category/topic page.",
         "location": "common.tsx",
         "module": () => import('@/routes/reuters/common.tsx')
-      },
-      "/investigates": {
-        "path": "/investigates",
-        "categories": [
-          "traditional-media"
-        ],
-        "view": 0,
-        "example": "/reuters/investigates",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "name": "Investigates",
-        "maintainers": [
-          "LyleLee"
-        ],
-        "location": "investigates.ts",
-        "module": () => import('@/routes/reuters/investigates.ts')
       }
     },
     "apiRoutes": {},
@@ -135762,7 +135806,7 @@ export default {
     "apiRoutes": {},
     "name": "at home",
     "url": "www.athome.co.jp",
-    "description": "アットホーム — 不動産情報サイト（貸店舗・事業用物件）",
+    "description": "アットホーム — 不動産情報サイト（賃貸・中古マンション・中古一戸建て・貸店舗）",
     "lang": "ja",
     "ja": {
       "name": "アットホーム"
@@ -151956,7 +152000,7 @@ export default {
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
-          "antiCrawler": false,
+          "antiCrawler": true,
           "supportRadar": true
         },
         "radar": [
